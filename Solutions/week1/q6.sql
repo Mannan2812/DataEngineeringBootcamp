@@ -1,0 +1,1 @@
+select avg(y.total_amount) as avg, t1."Zone" as pickup, t2."Zone" as dropoff from yellow_taxi_data y, taxi_zones t1, taxi_zones t2 where y."PULocationID"=t1."LocationID" and y."DOLocationID"=t2."LocationID" group by t1."Zone",t2."Zone" order by avg desc limit 1
